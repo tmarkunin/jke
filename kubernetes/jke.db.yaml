@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jke-db
+  labels:
+    app: @docker.container.name@
+spec:
+  type: NodePort
+  ports:
+    # the port that this service should serve on
+  - port: @service.port@
+    targetPort: @service.port@
+  selector:
+    app: @docker.container.name@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jke-db
+  labels:
+    app: @docker.container.name@
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: @docker.container.name@
+    spec:
+      containers:
+      - name: jke-db
+        image: @docker.qualified.image@
+        imagePullPolicy: @docker.image.pull.policy@
+        ports:
+        - containerPort: @service.port@
+          name: mysql
