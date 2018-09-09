@@ -57,7 +57,8 @@ public class JKE_DB_MySQL implements JKE_DB_I {
 				props.getProperty("jdbc.port"),
 				props.getProperty("jdbc.dbname"),
 				props.getProperty("jdbc.user"),				
-				props.getProperty("jdbc.password"));			
+				props.getProperty("jdbc.password"));	
+				System.out.println(fURL);	
 	}
 
 	/*
