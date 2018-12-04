@@ -1,1 +1,1 @@
-delete from JKEuser where UserName="tmarkunin"
+insert into  JKEuser values("Timur", "Markunin","tmarkunin","tmarkunin")
