@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: jkeweb
-        image: mycluster.icp:8500/default/websphere-liberty:webProfile8  
+        image: mycluster.icp:8500/devops/websphere-liberty:webProfile8  
         resources:
           requests:
             cpu: 100m
@@ -76,7 +76,7 @@ spec:
     spec:
       containers:
       - name: jkedb
-        image: mycluster.icp:8500/default/jke.db:1.0
+        image: mycluster.icp:8500/devops/jke.db:1.0
         resources:
           requests:
             cpu: 100m
